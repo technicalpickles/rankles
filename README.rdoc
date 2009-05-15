@@ -1,6 +1,29 @@
 = rankles
 
-Description goes here.
+Rankles is a collection of ranking algorithms (technically only one at the moment) implemented in Ruby.
+
+The idea is simple. Give Rankles some data, and it will give you a number. You probably want to sort based on this number.
+
+Quick example:
+
+    reddit = Rankles::Reddit.new :date => entry.published_at,
+                                 :upvotes => entry.cached_upvotes_count,
+                                 :downvotes => entry.cached_downvotes_count
+
+    reddit.to_f
+
+If you're dealing with ActiveRecord objects, you can actually assign the Rankles object to a float field, and it will handle converstion:
+
+    class Entry < ActiveRecord::Base
+      # ommitted
+      def calculate_ranking
+        reddit_ranking = Rankles::Reddit.new :date => entry.published_at,
+                                     :upvotes => entry.cached_upvotes_count,
+                                     :downvotes => entry.cached_downvotes_count
+
+        update_attributes! :ranking => reddit_ranking
+      end
+    end
 
 == Copyright
 

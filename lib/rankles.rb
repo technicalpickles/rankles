@@ -13,8 +13,9 @@ module Rankles
       self.downvotes = options[:downvotes]
     end
 
+    # http://www.seomoz.org/img/upload/reddit_cf_algorithm.png 
+    #
     # Gives the result of the reddit algorithm. Higher is better.
-    # See http://www.seomoz.org/img/upload/reddit_cf_algorithm.png for algoirithm notes.
     def to_f
       ts = date - Time.utc(2005, 12, 8, 7, 46, 43)
       x = upvotes - downvotes

@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/rankles.rb",
+     "rankles.gemspec",
      "spec/rankles_spec.rb",
      "spec/spec_helper.rb"
   ]
