@@ -1,4 +1,4 @@
-require 'activesupport'
+require 'active_support'
 module Rankles
   class Reddit
     attr_accessor :date, :upvotes, :downvotes
