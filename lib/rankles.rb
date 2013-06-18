@@ -1,4 +1,5 @@
-require 'active_support'
+require 'active_support/time'
+
 module Rankles
   class Reddit
     attr_accessor :date, :upvotes, :downvotes
@@ -13,7 +14,7 @@ module Rankles
       self.downvotes = options[:downvotes]
     end
 
-    # http://www.seomoz.org/img/upload/reddit_cf_algorithm.png 
+    # http://www.seomoz.org/img/upload/reddit_cf_algorithm.png
     #
     # Gives the result of the reddit algorithm. Higher is better.
     def to_f
